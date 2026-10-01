@@ -1,0 +1,91 @@
+[
+  {
+    "name": "Gorstaks 11",
+    "category": "System Tools",
+    "language": "Windows ISO",
+    "short": "A debloated, custom Windows 11 image built for speed and lower attack surface.",
+    "long": "Gorstaks 11 is a custom Windows 11 image, debloated using my own NTLite and WinReducer presets. Built from a clean business-edition base, it strips telemetry, Bing/Cortana, cloud features, and legacy components while keeping the OS fully capable, the Store, Xbox, Microsoft accounts, old and new apps, and games all still work. The result runs leaner and faster with a reduced attack surface. Aggressive by design: test in a VM before deploying to real hardware, and note that cumulative updates may fail on the trimmed image.",
+    "key": "Gorstaks11"
+  },
+  {
+    "name": "Sentinel",
+    "category": "Security",
+    "language": "C#",
+    "short": "Userland EDR for Windows that kills attack chains in real time.",
+    "long": "Sentinel is a userland endpoint detection and response tool for Windows 10/11 x64 (.NET Framework 4.8). It monitors processes, network activity, file system changes, and kernel driver loads in real time, and kills a process tree only when a multi-signal chain confirms a kill-grade attack. Provided for defensive, educational, and research purposes only.",
+    "key": "Sentinel"
+  },
+  {
+    "name": "Behavedr",
+    "category": "Security",
+    "language": "C#",
+    "short": "Behavioral EDR agent with scored detections and configurable response.",
+    "long": "Behavedr is a behavioral endpoint detection and response agent. It monitors process activity, network connections, and system integrity in real time, producing scored detections and executing configurable response actions. Cross-platform: Windows, Linux, macOS, and Android.",
+    "key": "Behavedr"
+  },
+  {
+    "name": "Ceprkac",
+    "category": "Browser",
+    "language": "C#",
+    "short": "Chrome-inspired tabbed browser with WebView2 and full H.264/AAC codecs.",
+    "long": "Ceprkac is a Chrome-inspired tabbed browser for Windows x64, built with C# WinForms and WebView2. It shares the UI and feature set of GBrowser but ships Edge codecs so H.264 and AAC media (Discord embeds, typical HTML5 players) play correctly. Built on .NET Framework 4.8.",
+    "key": "Ceprkac"
+  },
+  {
+    "name": "GBrowser",
+    "category": "Browser",
+    "language": "Python",
+    "short": "A full-featured, privacy-first web browser built with Python.",
+    "long": "GBrowser is a full-featured, privacy-first web browser built with Python and PyQt6/QtWebEngine. It focuses on privacy defaults while keeping a familiar tabbed browsing experience.",
+    "key": "GBrowser"
+  },
+  {
+    "name": "GTalk",
+    "category": "Communication",
+    "language": "Dart / Flutter",
+    "short": "Serverless global P2P messenger that finds users over the BitTorrent DHT.",
+    "long": "GTalk is a global peer-to-peer messenger that finds users worldwide through the BitTorrent DHT. No servers, no accounts, just open and chat. Built with Flutter and available for Windows, Linux, macOS, Android, and iOS.",
+    "key": "GTalk"
+  },
+  {
+    "name": "GIDE",
+    "category": "Developer Tools",
+    "language": "C#",
+    "short": "Free, fully local AI coding assistant for Windows.",
+    "long": "GIDE (Gorstak's IDE) is a free, fully local AI coding assistant for Windows built on .NET 4.8. It runs entirely on your machine using llama.cpp and Qwen3 models, with no cloud, no API keys, and no usage limits. Point it at a project folder, describe what you want, and it writes code directly into your files.",
+    "key": "GIDE"
+  },
+  {
+    "name": "TrimKit",
+    "category": "System Tools",
+    "language": "C#",
+    "short": "Free Windows image customization tool, an NTLite/WinReducer alternative.",
+    "long": "TrimKit is a free, open-source Windows image customization tool built with C# / .NET 10 / WPF. It offers an ISO workflow that mounts, copies, extracts, and debloats Windows images with an NTLite-style sidebar and a Chrome-dark theme. A full NTLite / WinReducer / DISM++ alternative.",
+    "key": "TrimKit"
+  },
+  {
+    "name": "Benchmark",
+    "category": "System Tools",
+    "language": "C#",
+    "short": "WinForms system benchmark with health analysis and bottleneck detection.",
+    "long": "Gorstak Benchmark is a .NET Framework 4.8 WinForms system benchmark with integrated health analysis. It runs CPU, Memory, Disk, GPU, and Network benchmarks, scans Windows event logs for hardware errors, GPU crashes, WHEA issues, and reboot patterns, and shows results in a dark-themed GUI with pie charts and screenshot export. No runtime install needed.",
+    "key": "Benchmark"
+  },
+  {
+    "name": "Harmony",
+    "category": "Audio",
+    "language": "C#",
+    "short": "Background healing tone generator for Windows.",
+    "long": "Harmony is a background healing tone generator for Windows. It plays low-volume therapeutic frequencies alongside your normal audio with no interception, no virtual cables, and no audio modification, just a gentle added tone layer with selectable presets (Schumann resonance, solfeggio frequencies, binaural beats).",
+    "key": "Harmony"
+  },
+  {
+    "name": "My-Notes",
+    "category": "Docs",
+    "language": "Markdown",
+    "short": "Personal knowledge base of guides and writings.",
+    "long": "A collection of personal notes, guides, and writings by Gorstak covering technology, gaming, lifestyle, and philosophy. A knowledge repository spanning technical guides to personal reflections.",
+    "key": "My-Notes",
+    "notes": true
+  }
+]

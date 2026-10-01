@@ -1,0 +1,60 @@
+name: Refresh projects.json
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "* * * * *"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: refresh-projects
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Loop for ~5 minutes, refreshing about once per minute within this run.
+      # This gives a reliable ~1-minute cadence without relying on GitHub's
+      # best-effort scheduler (which does not honor per-minute cron).
+      - name: Refresh loop
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          end=$(( $(date +%s) + 300 ))
+          while [ "$(date +%s)" -lt "$end" ]; do
+            node scripts/fetch-projects.js || true
+            git add projects.json
+            if git diff --cached --quiet; then
+              echo "No changes"
+            else
+              git commit -m "chore(site): refresh projects.json"
+              git pull --rebase origin main || true
+              git push || true
+            fi
+            sleep 60
+          done
+
+      # Re-dispatch this workflow so it keeps running back-to-back, giving
+      # reliable continuous updates. The scheduled trigger above is only a
+      # fallback in case the self-dispatch chain is ever interrupted.
+      - name: Re-dispatch
+        env:
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: gh workflow run refresh-projects.yml --repo "$GITHUB_REPOSITORY"

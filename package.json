@@ -1,0 +1,16 @@
+{
+  "name": "gorstak-site",
+  "version": "2.0.0",
+  "description": "Goran Stambuk project showcase - static site with MediaFire downloads",
+  "main": "index.html",
+  "scripts": {
+    "serve": "npx http-server . -p 8080 -o",
+    "dev": "npx http-server . -p 8080 -o -c-1"
+  },
+  "keywords": ["portfolio", "projects", "mediafire"],
+  "author": "Goran Stambuk",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

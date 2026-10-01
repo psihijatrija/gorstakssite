@@ -1,0 +1,4 @@
+{
+  "users": ["Gorstak-Zadar"],
+  "excludeRepos": ["Gorstak-Zadar/gorstakssite", "Gorstak-Zadar/GorstaksAI", "Gorstak-Zadar/FTTS"]
+}
