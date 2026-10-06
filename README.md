@@ -1,12 +1,14 @@
 #  gorstak-site
 
 > **Gorstak Project Showcase Website** - Static HTML portfolio site displaying GitHub projects with modern UI.
+>
+> Live at **https://gorstak.eu** (GitHub Pages, custom domain).
 
 ---
 
 ##  Overview
 
-gorstak-site is a clean, modern portfolio website showcasing Gorstak's GitHub projects. Built with vanilla HTML, CSS, and JavaScript, it provides an elegant interface for browsing repositories with search and filtering capabilities.
+gorstak-site is a clean, modern portfolio website showcasing Gorstak's GitHub projects. Built with vanilla HTML, CSS, and JavaScript, it provides an elegant interface for browsing repositories with search and filtering capabilities. It is hosted on GitHub Pages under the `psihijatrija` account at the custom domain `gorstak.eu`.
 
 ---
 
@@ -26,29 +28,30 @@ gorstak-site is a clean, modern portfolio website showcasing Gorstak's GitHub pr
 
 | File | Description |
 |------|-------------|
-| `index.html` | Main website page (22.3 KB) |
-| `projects.json` | Project data and metadata (38.9 KB) |
-| `repos.json` | Repository list (83 B) |
-| `repos.zip` | Compressed repository archive (15.4 KB) |
-| `CNAME` | Custom domain configuration |
-| `scripts/` | JavaScript utilities |
+| `index.html` | Main website page (self-contained HTML/CSS/JS) |
+| `projects.json` | Hand-curated project list used by the UI |
+| `readmes/` | Per-project README markdown shown in the detail modal |
+| `notes/` | My-Notes knowledge base, indexed by `notes/notes.json` |
+| `repos.json` | Config for the optional fetch script (`users`, `excludeRepos`) |
+| `CNAME` | Custom domain (`gorstak.eu`) |
+| `scripts/` | Optional `fetch-projects.js` GitHub API fetcher (manual use) |
+| `.github/workflows/` | Pages deploy workflow |
 
 ---
 
 ##  Deployment
 
 ### GitHub Pages
-1. Fork this repository
-2. Go to Settings -> Pages
-3. Select main branch as source
-4. Site will be available at `https://yourusername.github.io/gorstak-site`
+1. Push to the `main` branch of `psihijatrija/gorstakssite`
+2. Settings -> Pages -> Source: "Deploy from a branch" (or the included Actions workflow)
+3. The `Deploy GitHub Pages` workflow publishes the site on every push to `main`
 
-### Custom Domain
-1. Update `CNAME` file with your domain
-2. Configure DNS records:
-   - CNAME: `www` -> `yourusername.github.io`
-   - A Records: Point to GitHub Pages IPs
-3. Enable HTTPS in repository settings
+### Custom Domain (gorstak.eu)
+1. `CNAME` contains `gorstak.eu`
+2. DNS at the registrar (OVH):
+   - Apex `@` A records -> GitHub Pages IPs: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - `www` CNAME -> `psihijatrija.github.io.`
+3. Enable "Enforce HTTPS" in Settings -> Pages once the certificate provisions
 
 ### Local Testing
 ```bash
@@ -76,7 +79,7 @@ http://localhost:8000
       "language": "C#",
       "stars": 150,
       "forks": 25,
-      "url": "https://github.com/Gorstak-Zadar/GEDR",
+      "url": "https://github.com/psihijatrija/Sentinel",
       "category": "security",
       "tags": ["edr", "security", "windows"]
     }
@@ -164,7 +167,7 @@ Edit CSS variables in `index.html`:
   "language": "Python",
   "stars": 0,
   "forks": 0,
-  "url": "https://github.com/Gorstak-Zadar/ProjectName",
+  "url": "https://github.com/psihijatrija/ProjectName",
   "category": "tools",
   "tags": ["python", "automation"]
 }

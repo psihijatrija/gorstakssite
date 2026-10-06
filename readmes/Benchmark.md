@@ -36,7 +36,7 @@ build.bat
 
 Output: `releases\0.4.0\Benchmark.exe` (351 KB)
 
-Or just download from [Releases](https://github.com/CroatiaSecurity/Benchmark/releases).
+Or just download from [Releases](https://github.com/psihijatrija/Benchmark/releases).
 
 ---
 
